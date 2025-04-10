@@ -7,6 +7,7 @@ int main() {
     int populacao1, populacao2, np1, np2;
     float area1, area2, pib1, pib2;
     float densidade1, densidade2, percapita1, percapita2;
+    float superpoder1, superpoder2;
     char codigocarta1[5], codigocarta2[5], cidade1[40], cidade2[40], estado1, estado2;
 
     printf("BEM VINDO ao novo jogo SUPER TRUNFO\n");
@@ -92,5 +93,31 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per Capita: %.2f reais\n", percapita2);
 
+    superpoder1 = (float)populacao1 + area1 + pib1 + np1 + percapita1 + (1.0 / densidade1);
+    superpoder2 = (float)populacao2 + area2 + pib2 + np2 + percapita2 + (1.0 / densidade2);
+
+        // Comparações
+        printf("\nComparação de Cartas:\n");
+        printf("População: %s ; venceu (%d)\n", 
+               (populacao1 > populacao2) ? "Carta 1" : "Carta 2", 
+               populacao1 > populacao2);
+        printf("Área: %s venceu (%d)\n", 
+               (area1 > area2) ? "Carta 1" : "Carta 2", 
+               area1 > area2);
+        printf("PIB: %s venceu (%d)\n", 
+               (pib1 > pib2) ? "Carta 1" : "Carta 2", 
+               pib1 > pib2);
+        printf("Pontos Turísticos: %s venceu (%d)\n", 
+               (np1 > np2) ? "Carta 1" : "Carta 2", 
+               np1 > np2);
+        printf("Densidade Populacional: %s venceu (%d)\n", 
+               (densidade1 < densidade2) ? "Carta 1" : "Carta 2", 
+               densidade1 < densidade2); // menor vence
+        printf("PIB per Capita: %s venceu (%d)\n", 
+               (percapita1 > percapita2) ? "Carta 1" : "Carta 2", 
+               percapita1 > percapita2);
+        printf("Super Poder: %s venceu (%d)\n", 
+               (superpoder1 > superpoder2) ? "Carta 1" : "Carta 2", 
+               superpoder1 > superpoder2);
     return 0;
 }
